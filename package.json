@@ -1,10 +1,16 @@
 {
-  "name": "project-lvl1-s69",
+  "name": "project-lvl1-s8",
   "version": "1.0.0",
   "description": "hexlet brain-games project",
   "main": "index.js",
+  "bin": {
+  "brain-games": "dist/bin/brain-games.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,9 +22,6 @@
     "url": "https://github.com/altsab/project-lvl1-s69/issues"
   },
   "homepage": "https://github.com/altsab/project-lvl1-s69#readme",
-  "scripts": {
-    "babel-node": "babel-node"
-  },
   "devDependencies": {
     "babel-cli": "*",
     "babel-core": "*",

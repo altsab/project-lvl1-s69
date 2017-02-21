@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import index from './src';
+import myLib from '..';
 
 console.log('Welcome to the Brain Games!');
 
-index.getName();
+myLib();

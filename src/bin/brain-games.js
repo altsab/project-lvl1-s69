@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import myLib from '..';
+import greetUser from '..';
 
 console.log('Welcome to the Brain Games!');
 
-myLib();
+greetUser();

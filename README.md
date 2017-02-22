@@ -7,4 +7,4 @@ Hexlet Project-1 repo
 ## Installation
 `make install`
 ## Using
-`make start`
+`brain-games, brain-even`

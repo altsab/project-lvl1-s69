@@ -1,5 +1,7 @@
 import * as gameLogic from '..';
 
+const gameTask = ('Answer "yes" if number even otherwise answer "no".');
+
 const makeQuestionAnswer = (num) => {
   const question = num;
   const answer = num % 2 > 0 ? 'no' : 'yes';
@@ -16,5 +18,5 @@ const questionsAnswers = [
   makeQuestionAnswer(randInt()),
 ];
 const numberOfTries = 3;
-const startGame = gameLogic.initiateGame(questionsAnswers, numberOfTries);
+const startGame = gameLogic.initiateGame(questionsAnswers, numberOfTries, gameTask);
 export default startGame;

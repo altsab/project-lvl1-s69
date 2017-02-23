@@ -15,8 +15,9 @@ export const questPair = (question, answer) => cons(question, answer);
 export const getQuestion = pair => car(pair);
 export const getAnswer = pair => cdr(pair);
 
-export const initiateGame = (questionsAnswers, numberOfTries) =>
+export const initiateGame = (questionsAnswers, numberOfTries, gameTask) =>
   () => {
+    console.log(gameTask);
     const userName = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${userName}!`);
     for (let i = 0; i < numberOfTries; i += 1) {

@@ -1,6 +1,7 @@
 import { cons, car, cdr } from 'hexlet-pairs';
 import * as gameLogic from '..';
 
+const gameTask = ('Answer "yes" if number even otherwise answer "no".');
 const questionVersions = [
   cons((a, b) => `${a} + ${b}`, (a, b) => a + b),
   cons((a, b) => `${a} - ${b}`, (a, b) => a - b),
@@ -23,5 +24,5 @@ const questionsAnswers = [
   makeQuestionAnswer(randInt(), randInt()),
 ];
 const numberOfTries = 3;
-const startGame = gameLogic.initiateGame(questionsAnswers, numberOfTries);
+const startGame = gameLogic.initiateGame(questionsAnswers, numberOfTries, gameTask);
 export default startGame;

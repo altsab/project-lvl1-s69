@@ -8,7 +8,7 @@ const makeQuestionAnswer = (num) => {
 
 const randInt = () => gameLogic.getRandomInt(1, 100);
 
-const questionsAsnwers = [
+const questionsAnswers = [
   makeQuestionAnswer(randInt()),
   makeQuestionAnswer(randInt()),
   makeQuestionAnswer(randInt()),
@@ -16,5 +16,5 @@ const questionsAsnwers = [
   makeQuestionAnswer(randInt()),
 ];
 const numberOfTries = 3;
-const startGame = gameLogic.initiateGame(questionsAsnwers, numberOfTries);
+const startGame = gameLogic.initiateGame(questionsAnswers, numberOfTries);
 export default startGame;

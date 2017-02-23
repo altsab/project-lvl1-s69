@@ -23,5 +23,5 @@ const questionsAsnwers = [
   makeQuestionAnswer(randInt(), randInt()),
 ];
 const numberOfTries = 3;
-const startGame = gameLogic.doGame(questionsAsnwers, numberOfTries);
+const startGame = gameLogic.initiateGame(questionsAsnwers, numberOfTries);
 export default startGame;

@@ -15,17 +15,17 @@ export const questPair = (question, answer) => cons(question, answer);
 export const getQuestion = pair => car(pair);
 export const getAnswer = pair => cdr(pair);
 
-export const doGame = (questionsAnswers, numberOfTries) =>
-  (userName) => {
+export const initiateGame = (questionsAnswers, numberOfTries) =>
+  () => {
+    const userName = readlineSync.question('May I have your name? ');
+    console.log(`Hello, ${userName}!`);
     for (let i = 0; i < numberOfTries; i += 1) {
       const question = getQuestion(questionsAnswers[i]);
       const answer = getAnswer(questionsAnswers[i]);
       console.log(`Question: ${question}`);
       const userAnswer = readlineSync.question('Your answer: ');
-      if (typeof answer === 'number') {
-        Number(userAnswer);
-      }
-      if (userAnswer === answer) {
+      const stAnswer = String(answer);
+      if (userAnswer === stAnswer) {
         console.log('Correct!');
       } else {
         console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`);

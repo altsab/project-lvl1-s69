@@ -7,7 +7,6 @@ const balanceNumbers = (numArray) => {
   const max = Math.max(...numArray);
   const min = Math.min(...numArray);
   if (max - min === 1) {
-    console.log(numArray.sort((a, b) => (a - b)));
     return numArray.sort((a, b) => (a - b));
   }
   const maxIndex = numArray.indexOf(max);

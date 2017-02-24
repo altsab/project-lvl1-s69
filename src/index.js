@@ -21,17 +21,21 @@ export const initiateGame = (questionsAnswers, numberOfTries, gameTask) =>
     console.log(gameTask);
     const userName = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${userName}!`);
-    for (let i = 0; i < numberOfTries; i += 1) {
-      const question = getQuestion(questionsAnswers[i]);
-      const answer = String(getAnswer(questionsAnswers[i]));
+    const iterGame = (index) => {
+      if (index === numberOfTries) {
+        return console.log(`Congratulations, ${userName}!`);
+      }
+      const question = getQuestion(questionsAnswers[index]);
+      const answer = String(getAnswer(questionsAnswers[index]));
       console.log(`Question: ${question}`);
       const userAnswer = readlineSync.question('Your answer: ');
       if (userAnswer === answer) {
         console.log('Correct!');
-      } else {
-        console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`);
-        return console.log(`Let's try again, ${userName}!`);
+        const newIndex = index + 1;
+        return iterGame(newIndex);
       }
-    }
-    return console.log(`Congratulations, ${userName}!`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`);
+      return console.log(`Let's try again, ${userName}!`);
+    };
+    return iterGame(0);
   };

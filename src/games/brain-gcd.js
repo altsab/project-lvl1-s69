@@ -23,5 +23,4 @@ const questionsAnswers = [
   makeQuestionAnswer(randInt(), randInt()),
   makeQuestionAnswer(randInt(), randInt()),
 ];
-const makeGame = initiateGame(questionsAnswers, gameTask);
-export default makeGame;
+export default initiateGame(questionsAnswers, gameTask);

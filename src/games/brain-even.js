@@ -1,5 +1,6 @@
 import initiateGame, { questPair, getRandomInt } from '..';
 
+
 const gameTask = 'Answer "yes" if number even otherwise answer "no".';
 
 const makeQuestionAnswer = (num) => {
@@ -18,5 +19,4 @@ const questionsAnswers = [
   makeQuestionAnswer(randInt()),
 ];
 
-const makeGame = initiateGame(questionsAnswers, gameTask);
-export default makeGame;
+export default initiateGame(questionsAnswers, gameTask);

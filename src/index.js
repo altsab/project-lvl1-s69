@@ -15,13 +15,13 @@ export const questPair = (question, answer) => cons(question, answer);
 export const getQuestion = pair => car(pair);
 export const getAnswer = pair => cdr(pair);
 
+export const numberOfTries = 3;
 const initiateGame = (questionsAnswers, gameTask) =>
   () => {
     console.log('Welcome to the Brain Games');
     console.log(gameTask);
     const userName = getUserName();
     console.log(`Hello, ${userName}!`);
-    const numberOfTries = 3;
     const iterGame = (index) => {
       if (index === numberOfTries) {
         return console.log(`Congratulations, ${userName}!`);

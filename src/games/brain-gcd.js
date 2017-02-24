@@ -1,4 +1,5 @@
-import initiateGame, { questPair, getRandomInt } from '..';
+import { times } from 'lodash';
+import initiateGame, { questPair, getRandomInt, numberOfTries } from '..';
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
@@ -15,12 +16,5 @@ const makeQuestionAnswer = (a, b) => {
 };
 
 const randInt = () => getRandomInt(1, 100);
-
-const questionsAnswers = [
-  makeQuestionAnswer(randInt(), randInt()),
-  makeQuestionAnswer(randInt(), randInt()),
-  makeQuestionAnswer(randInt(), randInt()),
-  makeQuestionAnswer(randInt(), randInt()),
-  makeQuestionAnswer(randInt(), randInt()),
-];
+const questionsAnswers = times(numberOfTries, () => makeQuestionAnswer(randInt(), randInt()));
 export default initiateGame(questionsAnswers, gameTask);

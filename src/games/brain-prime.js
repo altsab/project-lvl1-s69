@@ -1,4 +1,5 @@
-import initiateGame, { questPair, getRandomInt } from '..';
+import { times } from 'lodash';
+import initiateGame, { questPair, getRandomInt, numberOfTries } from '..';
 
 const gameTask = 'Answer "yes" if given number is a Prime number otherwise answer "no".';
 
@@ -22,12 +23,6 @@ const makeQuestionAnswer = (num) => {
 
 const randInt = () => getRandomInt(1, 100);
 
-const questionsAnswers = [
-  makeQuestionAnswer(randInt()),
-  makeQuestionAnswer(randInt()),
-  makeQuestionAnswer(randInt()),
-  makeQuestionAnswer(randInt()),
-  makeQuestionAnswer(randInt()),
-];
+const questionsAnswers = times(numberOfTries, () => makeQuestionAnswer(randInt()));
 
 export default initiateGame(questionsAnswers, gameTask);

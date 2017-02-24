@@ -1,5 +1,6 @@
+import { times } from 'lodash';
 import { cons, car, cdr } from 'hexlet-pairs';
-import initiateGame, { randomArrayItem, questPair, getRandomInt } from '..';
+import initiateGame, { randomArrayItem, questPair, getRandomInt, numberOfTries } from '..';
 
 const gameTask = 'What is the result of the expression?';
 const questionTypes = [
@@ -15,12 +16,5 @@ const makeQuestionAnswer = (a, b) => {
 };
 
 const randInt = () => getRandomInt(1, 100);
-
-const questionsAnswers = [
-  makeQuestionAnswer(randInt(), randInt()),
-  makeQuestionAnswer(randInt(), randInt()),
-  makeQuestionAnswer(randInt(), randInt()),
-  makeQuestionAnswer(randInt(), randInt()),
-  makeQuestionAnswer(randInt(), randInt()),
-];
+const questionsAnswers = times(numberOfTries, () => makeQuestionAnswer(randInt(), randInt()));
 export default initiateGame(questionsAnswers, gameTask);

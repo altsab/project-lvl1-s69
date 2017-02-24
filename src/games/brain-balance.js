@@ -1,4 +1,5 @@
-import initiateGame, { questPair, getRandomInt } from '..';
+import { times } from 'lodash';
+import initiateGame, { questPair, getRandomInt, numberOfTries } from '..';
 
 const gameTask = 'Balance the given number.';
 const randInt = () => getRandomInt(10, 10000);
@@ -30,12 +31,5 @@ const makeQuestionAnswer = (num) => {
   return questPair(question, answer);
 };
 
-const questionsAnswers = [
-  makeQuestionAnswer(randInt()),
-  makeQuestionAnswer(randInt()),
-  makeQuestionAnswer(randInt()),
-  makeQuestionAnswer(randInt()),
-  makeQuestionAnswer(randInt()),
-  makeQuestionAnswer(randInt()),
-];
+const questionsAnswers = times(numberOfTries, () => makeQuestionAnswer(randInt()));
 export default initiateGame(questionsAnswers, gameTask);

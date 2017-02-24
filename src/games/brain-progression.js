@@ -1,4 +1,5 @@
-import initiateGame, { questPair, getRandomInt, randomArrayItem } from '..';
+import { times } from 'lodash';
+import initiateGame, { questPair, getRandomInt, randomArrayItem, numberOfTries } from '..';
 
 const gameTask = 'What number is missing in this progression?';
 
@@ -26,13 +27,5 @@ const makeQuestionAnswer = () => {
   return questPair(question, answer);
 };
 
-const questionsAnswers = [
-  makeQuestionAnswer(),
-  makeQuestionAnswer(),
-  makeQuestionAnswer(),
-  makeQuestionAnswer(),
-  makeQuestionAnswer(),
-  makeQuestionAnswer(),
-];
-
+const questionsAnswers = times(numberOfTries, () => makeQuestionAnswer());
 export default initiateGame(questionsAnswers, gameTask);

@@ -1,10 +1,22 @@
 import initiateGame, { questPair, getRandomInt } from '..';
 
-const gameTask = 'Answer "yes" if number even otherwise answer "no".';
+const gameTask = 'Answer "yes" if given number is a Prime number otherwise answer "no".';
 
+const isPrime = (num) => {
+  const iter = (acc) => {
+    if (acc > num / 2) {
+      return 'yes';
+    }
+    if (num % acc === 0) {
+      return 'no';
+    }
+    return iter(acc + 1);
+  };
+  return iter(2);
+};
 const makeQuestionAnswer = (num) => {
   const question = num;
-  const answer = num % 2 > 0 ? 'no' : 'yes';
+  const answer = isPrime(num);
   return questPair(question, answer);
 };
 

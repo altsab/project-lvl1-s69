@@ -17,16 +17,16 @@ export const getAnswer = pair => cdr(pair);
 
 export const initiateGame = (questionsAnswers, numberOfTries, gameTask) =>
   () => {
+    console.log('Welcome to the Brain Games');
     console.log(gameTask);
     const userName = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${userName}!`);
     for (let i = 0; i < numberOfTries; i += 1) {
       const question = getQuestion(questionsAnswers[i]);
-      const answer = getAnswer(questionsAnswers[i]);
+      const answer = String(getAnswer(questionsAnswers[i]));
       console.log(`Question: ${question}`);
       const userAnswer = readlineSync.question('Your answer: ');
-      const stAnswer = String(answer);
-      if (userAnswer === stAnswer) {
+      if (userAnswer === answer) {
         console.log('Correct!');
       } else {
         console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`);

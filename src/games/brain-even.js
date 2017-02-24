@@ -18,5 +18,5 @@ const questionsAnswers = [
   makeQuestionAnswer(randInt()),
 ];
 const numberOfTries = 3;
-const startGame = gameLogic.initiateGame(questionsAnswers, numberOfTries, gameTask);
-export default startGame;
+const makeGame = gameLogic.initiateGame(questionsAnswers, numberOfTries, gameTask);
+export default makeGame;

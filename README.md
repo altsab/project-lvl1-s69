@@ -7,4 +7,4 @@ Hexlet Project-1 repo
 ## Installation
 `make install`
 ## Using
-`brain-games, brain-even`
+`brain-games, brain-even, brain-calc, brain-gcd, brain-balance`

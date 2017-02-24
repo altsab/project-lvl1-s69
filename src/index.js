@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { cons, car, cdr } from 'hexlet-pairs';
 
-export default () => readlineSync.question('May I have your name? ');
+export const getUserName = () => readlineSync.question('May I have your name? ');
 
 export const randomArrayItem = array => array[Math.floor(Math.random() * array.length)];
 
@@ -15,12 +15,13 @@ export const questPair = (question, answer) => cons(question, answer);
 export const getQuestion = pair => car(pair);
 export const getAnswer = pair => cdr(pair);
 
-export const initiateGame = (questionsAnswers, numberOfTries, gameTask) =>
+const initiateGame = (questionsAnswers, gameTask) =>
   () => {
     console.log('Welcome to the Brain Games');
     console.log(gameTask);
-    const userName = readlineSync.question('May I have your name? ');
+    const userName = getUserName();
     console.log(`Hello, ${userName}!`);
+    const numberOfTries = 3;
     const iterGame = (index) => {
       if (index === numberOfTries) {
         return console.log(`Congratulations, ${userName}!`);
@@ -39,3 +40,4 @@ export const initiateGame = (questionsAnswers, numberOfTries, gameTask) =>
     };
     return iterGame(0);
   };
+export default initiateGame;

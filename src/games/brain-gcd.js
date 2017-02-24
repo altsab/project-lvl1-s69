@@ -1,6 +1,6 @@
-import * as gameLogic from '..';
+import initiateGame, { questPair, getRandomInt } from '..';
 
-const gameTask = ('Find the greatest common divisor of given numbers.');
+const gameTask = 'Find the greatest common divisor of given numbers.';
 
 const makeQuestionAnswer = (a, b) => {
   const question = `${a} ${b}`;
@@ -11,10 +11,10 @@ const makeQuestionAnswer = (a, b) => {
     return gcd(num2, num1 % num2);
   };
   const answer = gcd(a, b);
-  return gameLogic.questPair(question, answer);
+  return questPair(question, answer);
 };
 
-const randInt = () => gameLogic.getRandomInt(1, 100);
+const randInt = () => getRandomInt(1, 100);
 
 const questionsAnswers = [
   makeQuestionAnswer(randInt(), randInt()),
@@ -23,6 +23,5 @@ const questionsAnswers = [
   makeQuestionAnswer(randInt(), randInt()),
   makeQuestionAnswer(randInt(), randInt()),
 ];
-const numberOfTries = 3;
-const makeGame = gameLogic.initiateGame(questionsAnswers, numberOfTries, gameTask);
+const makeGame = initiateGame(questionsAnswers, gameTask);
 export default makeGame;

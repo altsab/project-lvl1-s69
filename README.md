@@ -3,7 +3,7 @@
 [![Issue Count](https://codeclimate.com/github/altsab/project-lvl1-s69/badges/issue_count.svg)](https://codeclimate.com/github/altsab/project-lvl1-s69)
 [![Build Status](https://travis-ci.org/altsab/project-lvl1-s69.svg?branch=master)](https://travis-ci.org/altsab/project-lvl1-s69)
 # project-lvl1-s69
-Hexlet Project-1 repo
+Hexlet Project 1
 ## Installation
 `npm i project-lvl1-s8 -g`
 ## Using

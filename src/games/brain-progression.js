@@ -1,4 +1,4 @@
-import { times, random, sample, set, concat } from 'lodash';
+import { times, random, sample, set } from 'lodash';
 import initiateGame, { questPair, numberOfTries } from '..';
 
 const gameTask = 'What number is missing in this progression?';
@@ -9,7 +9,7 @@ const makeSeqArray = (start, step, length) => {
       return array;
     }
     const nextValue = lastValue + step;
-    const newArray = concat(array, nextValue);
+    const newArray = array.concat(nextValue);
     return iter(newArray, nextValue, counter + 1);
   };
   return iter([start], start, 1);

@@ -9,8 +9,7 @@ Hexlet Project 1
 ## Using
 `brain-games, brain-even, brain-calc, brain-gcd, brain-balance, brain-prime`
 
-## Useful information, used in project-lvl
-* http://semver.org/lang/ru/
+## Useful information, used in project
 * [Основы Linux](https://habrahabr.ru/post/105495/)
 * [Руководство начинающего пользователя Linux как (запускать программы на исполнение)](https://www.sao.ru/hq/sts/linux/doc/lnag/3.html#run_program)
 * [Что такое _шебанг_ и для чего он нужен](https://ru.wikipedia.org/wiki/Шебанг_(Unix))

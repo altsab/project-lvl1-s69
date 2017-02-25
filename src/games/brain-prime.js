@@ -6,10 +6,10 @@ const gameTask = 'Answer "yes" if given number is a Prime number otherwise answe
 const isPrime = (num) => {
   const iter = (acc) => {
     if (acc > num / 2) {
-      return 'yes';
+      return true;
     }
     if (num % acc === 0) {
-      return 'no';
+      return false;
     }
     return iter(acc + 1);
   };
@@ -18,7 +18,7 @@ const isPrime = (num) => {
 
 const makeQuestionAnswer = (num) => {
   const question = num;
-  const answer = isPrime(num);
+  const answer = isPrime(num) ? 'yes' : 'no';
   return questPair(question, answer);
 };
 

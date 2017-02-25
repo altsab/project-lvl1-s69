@@ -1,15 +1,8 @@
+import { head, tail, isEmpty } from 'lodash';
 import readlineSync from 'readline-sync';
 import { cons, car, cdr } from 'hexlet-pairs';
 
 export const getUserName = () => readlineSync.question('May I have your name? ');
-
-export const randomArrayItem = array => array[Math.floor(Math.random() * array.length)];
-
-export const getRandomInt = (min, max) => {
-  const smin = Math.ceil(min);
-  const smax = Math.floor(max);
-  return Math.floor(Math.random() * (smax - smin)) + smin;
-};
 
 export const questPair = (question, answer) => cons(question, answer);
 export const getQuestion = pair => car(pair);
@@ -22,22 +15,22 @@ const initiateGame = (questionsAnswers, gameTask) =>
     console.log(gameTask);
     const userName = getUserName();
     console.log(`Hello, ${userName}!`);
-    const iterGame = (index) => {
-      if (index === numberOfTries) {
+    const iterGame = (quiz) => {
+      if (isEmpty(quiz)) {
         return console.log(`Congratulations, ${userName}!`);
       }
-      const question = getQuestion(questionsAnswers[index]);
-      const answer = String(getAnswer(questionsAnswers[index]));
+      const currentPair = head(quiz);
+      const question = getQuestion(currentPair);
+      const answer = String(getAnswer(currentPair));
       console.log(`Question: ${question}`);
       const userAnswer = readlineSync.question('Your answer: ');
       if (userAnswer === answer) {
         console.log('Correct!');
-        const newIndex = index + 1;
-        return iterGame(newIndex);
+        return iterGame(tail(quiz));
       }
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}.`);
       return console.log(`Let's try again, ${userName}!`);
     };
-    return iterGame(0);
+    return iterGame(questionsAnswers);
   };
 export default initiateGame;

@@ -5,6 +5,6 @@
 # project-lvl1-s69
 Hexlet Project-1 repo
 ## Installation
-`make install`
+`npm i project-lvl1-s8 -g`
 ## Using
-`brain-games, brain-even, brain-calc, brain-gcd, brain-balance`
+`brain-games, brain-even, brain-calc, brain-gcd, brain-balance, brain-prime`

@@ -1,6 +1,6 @@
 {
   "name": "project-lvl1-s8",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "hexlet brain-games project",
   "main": "dist/index.js",
   "bin": {
